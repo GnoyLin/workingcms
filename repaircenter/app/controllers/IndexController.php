@@ -8,5 +8,11 @@ class IndexController extends ControllerBase
 
     }
 
+	public function postdataAction(){
+		
+		$a=$this->request->getJsonRawBody();
+		return json_encode($a);
+	}
+
 }
 

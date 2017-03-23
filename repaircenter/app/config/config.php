@@ -10,9 +10,9 @@ return new \Phalcon\Config([
     'database' => [
         'adapter'     => 'Mysql',
         'host'        => 'localhost',
-        'username'    => 'root',
-        'password'    => '',
-        'dbname'      => 'test',
+        'username'    => 'zentao',
+        'password'    => '123456',
+        'dbname'      => 'magento',
         'charset'     => 'utf8',
     ],
     'application' => [

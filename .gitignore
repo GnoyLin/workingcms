@@ -1,0 +1,4 @@
+repaircenter/app/config.php
+repaircenter/cache/*
+*.htaccess
+*.swp
