@@ -5,7 +5,7 @@ class IndexController extends ControllerBase
 
     public function indexAction()
     {
-
+			return $this->view;
     }
 
 	public function postdataAction(){
