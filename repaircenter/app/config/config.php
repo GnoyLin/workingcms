@@ -28,6 +28,8 @@ return new \Phalcon\Config([
         // This allows the baseUri to be understand project paths that are not in the root directory
         // of the webpspace.  This will break if the public/index.php entry point is moved or
         // possibly if the web server rewrite rules are changed. This can also be set to a static path.
-        'baseUri'        => preg_replace('/public([\/\\\\])index.php$/', '', $_SERVER["PHP_SELF"]),
+        //'baseUri'        => preg_replace('/public([\/\\\\])index.php$/', '', $_SERVER["PHP_SELF"]),
+		//设置为httpd.conf中的alias,这样可以隐藏实际路径。在di的url设置中$url->setBaseUri($config->application->baseUri);这与thinkphp的设置是一样的。
+		'baseUri'	=> '/gnaix/',
     ]
 ]);

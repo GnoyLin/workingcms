@@ -13,6 +13,5 @@ class IndexController extends ControllerBase
 		$a=$this->request->getJsonRawBody();
 		return json_encode($a);
 	}
-
 }
 

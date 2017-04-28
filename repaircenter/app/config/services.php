@@ -11,7 +11,8 @@ use Phalcon\Flash\Direct as Flash;
 /**
  * Shared configuration service
  */
-$di->setShared('config', function () {
+$di->set('config', function () {
+//$di->setShared('config', function () {
     return include APP_PATH . "/config/config.php";
 });
 
@@ -60,7 +61,25 @@ $di->setShared('view', function () {
 /**
  * Database connection is created based in the parameters defined in the configuration file
  */
-$di->setShared('db', function () {
+$di->set('db', function() {
+ 
+       return new \Phalcon\Db\Adapter\Pdo\Mysql(array(
+ 
+           "host" => "localhost",
+ 
+           "username" => "zentao",
+ 
+           "password" => "123456",
+ 
+           "dbname" => "magento",
+ 
+       ));
+ 
+   });
+
+/* 
+$di->set('db', function () {
+//$di->setShared('db', function () {
     $config = $this->getConfig();
 
     $class = 'Phalcon\Db\Adapter\Pdo\\' . $config->database->adapter;
@@ -79,13 +98,13 @@ $di->setShared('db', function () {
     $connection = new $class($params);
 
     return $connection;
-});
-
+});*/
 
 /**
  * If the configuration specify the use of metadata adapter use it or use memory otherwise
  */
-$di->setShared('modelsMetadata', function () {
+$di->set('modelsMetadata', function () {
+//$di->setShared('modelsMetadata', function () {
     return new MetaDataAdapter();
 });
 
